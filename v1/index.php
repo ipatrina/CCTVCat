@@ -50,11 +50,11 @@ function getWeek($time = "", $format = "Ymd")
     for ($i = 1; $i <= $week; $i++) {
         $date[$i] = date(
             $format,
-            strtotime("+" . ($i - $week) . " days", $time)
+            strtotime($i - $week . " days", $time)
         );
     }
     for ($i = 1; $i <= 7; $i++) {
-        $day = date("Ymd", strtotime("+" . $i . " days"));
+        $day = date("Ymd", strtotime($i . " days"));
         if (!in_array($day, $date)) {
             $date[count($date) + 1] = $day;
         }
@@ -112,7 +112,6 @@ $channelNames = [
     "CCTV-8K",
     "更多频道",
 ];
-$date = getWeek();
 
 if (isset($_GET["Service"])) {
     $service = $_GET["Service"];
@@ -152,31 +151,31 @@ h3 {
 	font-size: 16px;
 	text-align: center;
 }
-	
+
 h4 {
 	line-height: 20px;
 	margin: 5px;
 }
-	
+
 p {
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 1px;
 }
-	
+
 td {
 	padding: 1px;
 	text-align: center;
 }
-	
+
 a {
 	text-decoration: none;
 }
-	
+
 .heading {
 	color: purple;
 }
-	
+
 .subHeading {
 	color: blueviolet;
 	font-size: 16px;
@@ -304,9 +303,9 @@ curl_close($curlHandle);
             window.scrollTo('0','0');
         }
     }
-    
+
     goTopEx();
 </script>
-<h5 style="text-align: center; font-size: 14px; color: green;">CCTVCat 2.0.0</h5>
+<h5 style="text-align: center; font-size: 14px; color: green;">CCTVCat 2.0.1</h5>
 </body>
 </html>

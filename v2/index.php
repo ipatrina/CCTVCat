@@ -9,13 +9,13 @@ $channelIds = [
     "600002521",
     "600002520",
     "600002483",
-    
+
     "600002481",
     "600002532",
     "600002505",
     "600002513",
     "600002531",
-    
+
     "600002498",
     "600002506",
     "600002490",
@@ -27,13 +27,13 @@ $channelIds = [
     "600002485",
     "600002484",
     "600002508",
-    
+
     "600002493",
     "600014550",
     "600084781",
     "600084744",
     "600084704",
-    
+
     "600084782",
     "600084758",
     "v1",
@@ -45,13 +45,13 @@ $channelNames = [
     "江苏卫视",
     "浙江卫视",
     "东方卫视",
-    
+
     "深圳卫视",
     "安徽卫视",
     "辽宁卫视",
     "山东卫视",
     "重庆卫视",
-    
+
     "黑龙江卫视",
     "海南卫视",
     "贵州卫视",
@@ -63,13 +63,13 @@ $channelNames = [
     "广东卫视",
     "福建东南卫视",
     "湖北卫视",
-    
+
     "河北卫视",
     "CGTN",
     "CGTN 纪录",
     "CGTN 西班牙语",
     "CGTN 法语",
-    
+
     "CGTN 阿拉伯语",
     "CGTN 俄语",
     "更多频道",
@@ -154,11 +154,11 @@ function getWeek($time = "", $format = "Ymd")
     for ($i = 1; $i <= $week; $i++) {
         $date[$i] = date(
             $format,
-            strtotime("+" . ($i - $week) . " days", $time)
+            strtotime($i - $week . " days", $time)
         );
     }
     for ($i = 1; $i <= 7; $i++) {
-        $day = date("Ymd", strtotime("+" . $i . " days"));
+        $day = date("Ymd", strtotime($i . " days"));
         if (!in_array($day, $date)) {
             $date[count($date) + 1] = $day;
         }
@@ -201,31 +201,31 @@ h3 {
 	font-size: 16px;
 	text-align: center;
 }
-	
+
 h4 {
 	line-height: 20px;
 	margin: 5px;
 }
-	
+
 p {
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 1px;
 }
-	
+
 td {
 	padding: 1px;
 	text-align: center;
 }
-	
+
 a {
 	text-decoration: none;
 }
-	
+
 .heading {
 	color: purple;
 }
-	
+
 .subHeading {
 	color: blueviolet;
 	font-size: 16px;
@@ -323,6 +323,6 @@ curl_close($curlHandle);
     
     goTopEx();
 </script>
-<h5 style="text-align: center; font-size: 14px; color: green;">CCTVCat 2.0.0</h5>
+<h5 style="text-align: center; font-size: 14px; color: green;">CCTVCat 2.0.1</h5>
 </body>
 </html>
