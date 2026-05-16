@@ -291,7 +291,7 @@ function printEpgTable($epgData, $epgChannelName)
 
 $currentChannelName = getChannelName($service);
 $curlHandle = curl_init();
-for ($i = 1; $i <= count($date); $i++) {
+for ($i = 1; $i < count($date); $i++) {
     $currentTable = yspGet($curlHandle, $service, $date[$i]);
     if (count($currentTable) > 0) {
         print '<h3 class="subHeading">'.formatDate($date[$i]).'</h3>';
@@ -320,9 +320,9 @@ curl_close($curlHandle);
             window.scrollTo('0', '0');
         }
     }
-    
+
     goTopEx();
 </script>
-<h5 style="text-align: center; font-size: 14px; color: green;">CCTVCat 2.0.1</h5>
+<h5 style="text-align: center; font-size: 14px; color: green;">CCTVCat 2.0.2</h5>
 </body>
 </html>

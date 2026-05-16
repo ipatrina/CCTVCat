@@ -254,7 +254,7 @@ function printEpgTable($epgData, $epgChannelName)
 }
 $curlHandle = curl_init();
 if ($channelMode) {
-    for ($i = 1; $i <= count($date); $i++) {
+    for ($i = 1; $i < count($date); $i++) {
         $jsonContext = cctvGet($curlHandle, $service, $date[$i]);
         if (isset($jsonContext["data"][$service]["list"])) {
             $epgChannelName = $jsonContext["data"][$service]["channelName"];
@@ -306,6 +306,6 @@ curl_close($curlHandle);
 
     goTopEx();
 </script>
-<h5 style="text-align: center; font-size: 14px; color: green;">CCTVCat 2.0.1</h5>
+<h5 style="text-align: center; font-size: 14px; color: green;">CCTVCat 2.0.2</h5>
 </body>
 </html>
